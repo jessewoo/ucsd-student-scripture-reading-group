@@ -52,7 +52,7 @@
     display: flex;
     align-items: flex-end;
     background:
-      linear-gradient(180deg, rgba(20,16,12,0.15) 0%, rgba(20,16,12,0.75) 100%),
+      linear-gradient(180deg, rgba(10,8,6,0.45) 0%, rgba(10,8,6,0.85) 100%),
       url("https://univcomms.ucsd.edu/_images/campus-profile/global-rankings.jpg") center 35%/cover no-repeat;
     padding: 32px;
   }
@@ -62,6 +62,24 @@
     color: #fff;
     text-align: center;
     padding-bottom: 48px;
+  }
+  .hero-questions {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 28px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .hero-questions li {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 999px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    color: #fff;
+    backdrop-filter: blur(2px);
   }
   .hero-eyebrow {
     text-transform: uppercase;
@@ -76,13 +94,15 @@
     line-height: 1.15;
     margin: 0 0 16px;
     font-weight: 700;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.55);
   }
   .hero p {
     font-size: 1.1rem;
     line-height: 1.5;
-    opacity: 0.92;
+    opacity: 0.96;
     margin: 0 auto 28px;
     max-width: 540px;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.55);
   }
 
   .cta {
@@ -243,6 +263,15 @@
     font-size: 0.82rem;
     color: var(--accent);
     font-weight: 600;
+  }
+  .week-card .book-quote {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--muted);
+    line-height: 1.5;
+    margin: 0 0 10px;
+    border-left: 2px solid var(--border);
+    padding-left: 10px;
   }
   .sprint-meta {
     color: var(--muted);
@@ -412,6 +441,14 @@
       <div class="hero-eyebrow">UC San Diego</div>
       <h1>The Big Questions: Scripture Reading &amp; Dialogue Group</h1>
       <p>How do we find authentic purpose, deep community, and lasting joy amidst the noise? The Bible has shaped global history, art, ethics, and literature more than any other text — yet most people have never actually read it for themselves.</p>
+      <ul class="hero-questions">
+        <li>What is my purpose?</li>
+        <li>Where do I find real community?</li>
+        <li>Does life have meaning?</li>
+        <li>Who is Jesus, really?</li>
+        <li>Why do I still feel alone in a crowd?</li>
+        <li>Is there more to life than achievement?</li>
+      </ul>
       <a class="cta" href="https://forms.gle/PyKgkWWVKs1LvNPi9" target="_blank" rel="noopener noreferrer">Sign Up</a>
     </div>
   </div>
@@ -507,18 +544,21 @@
         <img class="cover" src="https://covers.openlibrary.org/b/id/15104803-L.jpg" alt="The Anxious Generation cover">
         <div class="book-title">The Anxious Generation</div>
         <div class="book-author">Jonathan Haidt</div>
+        <p class="book-quote">"Overprotected in the real world and underprotected in the virtual world."</p>
         <div class="book-link">View on Amazon →</div>
       </a>
       <a class="week-card" href="https://www.amazon.com/s?k=The+Second+Mountain+David+Brooks" target="_blank" rel="noopener noreferrer">
         <img class="cover" src="https://covers.openlibrary.org/b/id/8782644-L.jpg" alt="The Second Mountain cover">
         <div class="book-title">The Second Mountain</div>
         <div class="book-author">David Brooks</div>
+        <p class="book-quote">"We move from the passions of youth to the deeper commitments that give life meaning."</p>
         <div class="book-link">View on Amazon →</div>
       </a>
       <a class="week-card" href="https://www.amazon.com/dp/0593545427" target="_blank" rel="noopener noreferrer">
         <img class="cover" src="https://i5.walmartimages.com/seo/The-Meaning-of-Your-Life-Finding-Purpose-in-an-Age-of-Emptiness-Hardcover-9780593545423_ff56a42f-fe06-4cc3-a4cf-5323e9f8914e.f1fd0917ec5625bd54c71981aff55ae9.jpeg?odnHeight=573&odnWidth=573&odnBg=FFFFFF" alt="The Meaning of Your Life cover">
         <div class="book-title">The Meaning of Your Life: Finding Purpose in an Age of Emptiness</div>
         <div class="book-author">Arthur C. Brooks</div>
+        <p class="book-quote">"Love is about being, not doing."</p>
         <div class="book-link">View on Amazon →</div>
       </a>
       <a class="week-card" href="https://www.amazon.com/s?k=Demolishing+Doubt+Cliffe+Stuart+Knechtle" target="_blank" rel="noopener noreferrer">
