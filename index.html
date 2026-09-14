@@ -281,6 +281,40 @@
   .sprint-meta strong {
     color: var(--text);
   }
+  .question-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: column;
+    grid-template-rows: repeat(4, auto);
+    column-gap: 56px;
+    row-gap: 14px;
+    text-align: left;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .question-list li {
+    color: var(--text);
+    font-size: 0.98rem;
+    line-height: 1.4;
+    padding-left: 16px;
+    position: relative;
+  }
+  @media (max-width: 640px) {
+    .question-list {
+      grid-template-columns: 1fr;
+      grid-auto-flow: row;
+    }
+  }
+  .question-list li::before {
+    content: "•";
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+  }
 
   .about-wrap {
     background: var(--card);
@@ -538,6 +572,21 @@
   <div class="sprint-wrap"><div class="sprint">
     <h2>Other books we're discussing</h2>
     <p class="sprint-vibe">Alongside Scripture, we're pulling from a few other books that wrestle with the same big questions — connection, purpose, and meaning.</p>
+
+    <ul class="question-list">
+      <li>What's my purpose?</li>
+      <li>Where's real community?</li>
+      <li>Does life have meaning?</li>
+      <li>Who is Jesus, really?</li>
+      <li>Why do I feel alone?</li>
+      <li>Is there more than achievement?</li>
+      <li>Why so anxious?</li>
+      <li>What makes work meaningful?</li>
+      <li>Can I be forgiven?</li>
+      <li>How do I handle suffering?</li>
+      <li>What happens when I die?</li>
+      <li>Why are relationships hard?</li>
+    </ul>
 
     <div class="week-list-wrap"><div class="week-list">
       <a class="week-card" href="https://www.amazon.com/s?k=The+Anxious+Generation+Jonathan+Haidt" target="_blank" rel="noopener noreferrer">
