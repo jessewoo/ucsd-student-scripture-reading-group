@@ -7,88 +7,400 @@
 <style>
   :root {
     color-scheme: light dark;
-    --bg: #faf8f5;
+    --bg: #fffdfa;
     --card: #ffffff;
     --text: #2b2521;
     --muted: #6b6259;
     --accent: #8a5a3b;
     --accent-hover: #6f4830;
     --border: #e7e0d8;
+    --tint: #f2ece3;
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --bg: #1c1916;
-      --card: #262220;
+      --card: #221e1b;
       --text: #f1ece6;
       --muted: #b3a99e;
       --accent: #d3a373;
       --accent-hover: #e3b88b;
       --border: #3a332d;
+      --tint: #17140f;
     }
   }
   * { box-sizing: border-box; }
   body {
     margin: 0;
-    min-height: 100vh;
     background: var(--bg);
     color: var(--text);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    min-height: 42vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
+    align-items: flex-end;
+    background:
+      linear-gradient(180deg, rgba(20,16,12,0.15) 0%, rgba(20,16,12,0.75) 100%),
+      url("https://univcomms.ucsd.edu/_images/campus-profile/global-rankings.jpg") center/cover no-repeat;
+    padding: 32px;
   }
-  .card {
-    max-width: 480px;
-    width: 100%;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 40px 32px;
+  .hero-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    color: #fff;
     text-align: center;
+    padding-bottom: 48px;
   }
-  h1 {
-    font-size: 1.5rem;
-    margin: 0 0 8px;
-    line-height: 1.3;
+  .hero-eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.78rem;
+    font-weight: 600;
+    opacity: 0.85;
+    margin-bottom: 14px;
   }
-  .subtitle {
-    color: var(--muted);
-    font-size: 0.95rem;
-    margin: 0 0 28px;
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.15;
+    margin: 0 0 16px;
+    font-weight: 700;
   }
+  .hero p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    opacity: 0.92;
+    margin: 0 auto 28px;
+    max-width: 540px;
+  }
+
   .cta {
     display: inline-block;
     background: var(--accent);
     color: #fff;
     text-decoration: none;
     font-weight: 600;
-    padding: 14px 28px;
+    padding: 15px 32px;
     border-radius: 999px;
     font-size: 1rem;
-    transition: background 0.15s ease;
+    transition: background 0.15s ease, transform 0.15s ease;
   }
-  .cta:hover { background: var(--accent-hover); }
-  .footer {
-    margin-top: 28px;
-    font-size: 0.85rem;
+  .cta:hover { background: var(--accent-hover); transform: translateY(-1px); }
+
+  /* Content */
+  .section-wrap {
+    background: var(--tint);
+  }
+  .section {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px;
+    text-align: center;
+  }
+  .section h2 {
+    font-size: 1.5rem;
+    margin: 0 0 14px;
+  }
+  .section p {
     color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 560px;
   }
-  .footer a {
+
+  .details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .detail-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px 20px;
+    flex: 1 1 200px;
+    max-width: 220px;
+  }
+  .detail-card .label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .detail-card .value {
+    font-size: 1rem;
+    color: var(--text);
+  }
+
+  .about-wrap {
+    background: var(--card);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .about {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 56px 24px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .about img {
+    flex: 1 1 320px;
+    max-width: 380px;
+    width: 100%;
+    border-radius: 16px;
+    display: block;
+  }
+  .about-text {
+    flex: 1 1 320px;
+    text-align: left;
+  }
+  .about-text h2 {
+    font-size: 1.5rem;
+    margin: 0 0 14px;
+  }
+  .about-text p {
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin: 0 0 14px;
+  }
+
+  .resources-wrap {
+    background: var(--bg);
+  }
+  .resources {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 56px 24px;
+    text-align: center;
+  }
+  .video-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 32px;
+  }
+  .video-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    flex: 1 1 320px;
+    max-width: 380px;
+    text-align: left;
+  }
+  .video-card video {
+    width: 100%;
+    display: block;
+    background: #000;
+    aspect-ratio: 16 / 9;
+  }
+  .video-card .video-info {
+    padding: 16px 18px;
+  }
+  .video-card .video-info h3 {
+    font-size: 1rem;
+    margin: 0 0 6px;
+  }
+  .video-card .video-info p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin: 0 0 10px;
+    line-height: 1.5;
+  }
+  .video-card .video-info a {
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .video-card .video-info a:hover { text-decoration: underline; }
+
+  .link-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+    text-align: left;
+  }
+  .link-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 20px;
+    text-decoration: none;
+    display: block;
+    transition: border-color 0.15s ease;
+  }
+  .link-card:hover { border-color: var(--accent); }
+  .link-card .name {
+    font-weight: 700;
+    color: var(--text);
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+  .link-card .desc {
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .final-cta-wrap {
+    background: var(--tint);
+  }
+  .final-cta {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 56px 24px;
+  }
+  .final-cta img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 28px 24px 40px;
+    font-size: 0.88rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+  }
+  footer a {
     color: var(--muted);
     text-decoration: underline;
   }
-  .footer a:hover { color: var(--accent); }
+  footer a:hover { color: var(--accent); }
 </style>
 </head>
 <body>
-  <div class="card">
-    <h1>UCSD Student Scripture Reading Group</h1>
-    <p class="subtitle">Join us as we read and discuss Scripture together.</p>
-    <a class="cta" href="https://forms.gle/PyKgkWWVKs1LvNPi9" target="_blank" rel="noopener noreferrer">Sign Up</a>
-    <p class="footer">
-      Connected with <a href="https://wavchurch.org/wav-ucsd" target="_blank" rel="noopener noreferrer">WAV Church UCSD</a>
-    </p>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">UC San Diego</div>
+      <h1>The Big Questions: Scripture Reading &amp; Dialogue Group</h1>
+      <p>How do we find authentic purpose, deep community, and lasting joy amidst the noise? The Bible has shaped global history, art, ethics, and literature more than any other text — yet most people have never actually read it for themselves.</p>
+      <a class="cta" href="https://forms.gle/PyKgkWWVKs1LvNPi9" target="_blank" rel="noopener noreferrer">Sign Up</a>
+    </div>
   </div>
+
+  <div class="section-wrap"><div class="section">
+    <h2>What to expect</h2>
+    <p>We gather for 45 minutes to read the primary text, ask big questions, and enjoy honest conversation over free wings. No preaching, no assumptions, and no prior background required — just open dialogue.</p>
+
+    <div class="details">
+      <div class="detail-card">
+        <div class="label">Date</div>
+        <div class="value">Thursday, September 24, 2026</div>
+      </div>
+      <div class="detail-card">
+        <div class="label">Time</div>
+        <div class="value">1:30PM (45-min session)</div>
+      </div>
+      <div class="detail-card">
+        <div class="label">Location</div>
+        <div class="value"><a href="https://www.google.com/maps/search/?api=1&query=Dirty+Birds+Price+Center+UCSD" target="_blank" rel="noopener noreferrer" style="color: var(--accent); font-weight: 600; text-decoration: underline;">Dirty Birds @ Price Center</a></div>
+      </div>
+    </div>
+
+    <p style="margin-top: 32px;">Hosted by <a href="https://wavchurch.org/wav-ucsd" target="_blank" rel="noopener noreferrer" style="color: var(--accent); font-weight: 600;">WAV Church</a> mentors.</p>
+    <p>Questions? Send us a text! <a href="tel:16195678924" style="color: var(--accent); font-weight: 600;">(619) 567-8924</a></p>
+  </div></div>
+
+  <div class="about-wrap"><div class="about">
+    <img src="group_illustration.jpeg" alt="Illustration of a group gathered together">
+    <div class="about-text">
+      <h2>About us</h2>
+      <p>We're a group of UCSD students who found God during college — and it changed everything. What started as our own honest questions turned into a love for reading Scripture together.</p>
+      <p>Now we just want to share that with others. No pressure, no perfect answers — just students inviting more students to open the Bible and talk about it, together.</p>
+    </div>
+  </div></div>
+
+  <div class="resources-wrap"><div class="resources">
+    <h2>Get a head start</h2>
+    <p>Before we meet, check out these short overview videos from <a href="https://bibleproject.com/videos/" target="_blank" rel="noopener noreferrer" style="color: var(--accent); font-weight: 600;">BibleProject</a> — a great way to get oriented if you're new to the text.</p>
+
+    <div class="video-grid">
+      <div class="video-card">
+        <video controls preload="none" poster="https://image.mux.com/KIXyrg7FpKKo4u02SQIHkrcEHSSlfUb53GikjdU6wEMQ/thumbnail.jpg?time=5">
+          <source src="https://stream.mux.com/KIXyrg7FpKKo4u02SQIHkrcEHSSlfUb53GikjdU6wEMQ/high.mp4" type="video/mp4">
+        </video>
+        <div class="video-info">
+          <h3>Genesis 1</h3>
+          <p>An overview of Genesis chapter 1 and the biblical creation narrative.</p>
+          <a href="https://bibleproject.com/videos/genesis-1/" target="_blank" rel="noopener noreferrer">Watch on BibleProject →</a>
+        </div>
+      </div>
+      <div class="video-card">
+        <video controls preload="none" poster="https://image.mux.com/sC6VzZQDk3024mhE2n8csZLINmtu7Vew8sgEs2W01V01gg/thumbnail.jpg?time=5">
+          <source src="https://stream.mux.com/sC6VzZQDk3024mhE2n8csZLINmtu7Vew8sgEs2W01V01gg/high.mp4" type="video/mp4">
+        </video>
+        <div class="video-info">
+          <h3>John 1–12</h3>
+          <p>An overview of the Gospel of John, covering Jesus' identity as the Messiah, beginning in chapter 1.</p>
+          <a href="https://bibleproject.com/videos/john-1-12/" target="_blank" rel="noopener noreferrer">Watch on BibleProject →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="link-grid">
+      <a class="link-card" href="https://www.bible.com/" target="_blank" rel="noopener noreferrer">
+        <div class="name">YouVersion Bible App</div>
+        <div class="desc">Free app with tons of translations, reading plans, and audio Bible.</div>
+      </a>
+      <a class="link-card" href="https://biblehub.com/" target="_blank" rel="noopener noreferrer">
+        <div class="name">Bible Hub</div>
+        <div class="desc">Parallel translations, original Greek/Hebrew word studies, and commentaries — free, no login.</div>
+      </a>
+      <a class="link-card" href="https://www.blueletterbible.org/" target="_blank" rel="noopener noreferrer">
+        <div class="name">Blue Letter Bible</div>
+        <div class="desc">Deep-dive tool for word studies and cross-references.</div>
+      </a>
+      <a class="link-card" href="https://www.biblegateway.com/" target="_blank" rel="noopener noreferrer">
+        <div class="name">Bible Gateway</div>
+        <div class="desc">Easily search and compare translations, plus reading plans and devotionals.</div>
+      </a>
+      <a class="link-card" href="https://dwellapp.io/" target="_blank" rel="noopener noreferrer">
+        <div class="name">Dwell App</div>
+        <div class="desc">Free-tier audio Bible in different voices and styles — great for commutes.</div>
+      </a>
+      <a class="link-card" href="https://www.esv.org/" target="_blank" rel="noopener noreferrer">
+        <div class="name">ESV.org</div>
+        <div class="desc">Clean reading experience with helpful study notes.</div>
+      </a>
+      <a class="link-card" href="https://bibleproject.com/guides/read-scripture/" target="_blank" rel="noopener noreferrer">
+        <div class="name">Read Scripture Plan</div>
+        <div class="desc">BibleProject's book-by-book reading plan that pairs with the videos above.</div>
+      </a>
+    </div>
+  </div></div>
+
+  <div class="final-cta-wrap"><div class="final-cta">
+    <img src="https://images.unsplash.com/photo-1755048796967-75a82d214846?q=80&w=1285&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Students gathered together">
+    <a class="cta" href="https://forms.gle/PyKgkWWVKs1LvNPi9" target="_blank" rel="noopener noreferrer">Join the Group</a>
+  </div></div>
+
+  <footer>
+    Connected with <a href="https://wavchurch.org/wav-ucsd" target="_blank" rel="noopener noreferrer">WAV Church UCSD</a>
+  </footer>
+
 </body>
 </html>
