@@ -139,6 +139,111 @@
     color: var(--text);
   }
 
+  .sprint-wrap {
+    background: var(--card);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .sprint {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 56px 24px;
+    text-align: center;
+  }
+  .sprint h2 {
+    font-size: 1.5rem;
+    margin: 0 0 6px;
+  }
+  .sprint .sprint-sub {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin: 0 0 8px;
+  }
+  .sprint .sprint-vibe {
+    color: var(--muted);
+    font-size: 1.02rem;
+    line-height: 1.6;
+    margin: 0 auto 36px;
+    max-width: 560px;
+  }
+  .week-list-wrap {
+    position: relative;
+    margin: 0 -24px 36px;
+  }
+  .week-list-wrap::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 12px;
+    width: 60px;
+    pointer-events: none;
+    background: linear-gradient(to right, transparent, var(--card));
+  }
+  .week-list {
+    display: flex;
+    gap: 20px;
+    text-align: left;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 4px 24px 12px;
+    scrollbar-width: thin;
+  }
+  .week-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    text-decoration: none;
+    display: block;
+    transition: border-color 0.15s ease;
+    flex: 0 0 200px;
+    scroll-snap-align: start;
+  }
+  .week-card:hover { border-color: var(--accent); }
+  .week-card .cover {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    background: var(--card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid var(--border);
+  }
+  .week-card .book-title {
+    font-size: 0.98rem;
+    color: var(--text);
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+  .week-card .book-author {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .week-card .book-link {
+    font-size: 0.82rem;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .sprint-meta {
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .sprint-meta strong {
+    color: var(--text);
+  }
+
   .about-wrap {
     background: var(--card);
     border-top: 1px solid var(--border);
@@ -325,17 +430,8 @@
     <p>Questions? Send us a text! <a href="tel:16195678924" style="color: var(--accent); font-weight: 600;">(619) 567-8924</a></p>
   </div></div>
 
-  <div class="about-wrap"><div class="about">
-    <img src="group_illustration.jpeg" alt="Illustration of a group gathered together">
-    <div class="about-text">
-      <h2>About us</h2>
-      <p>We're a group of UCSD students who found God during college — and it changed everything. What started as our own honest questions turned into a love for reading Scripture together.</p>
-      <p>Now we just want to share that with others. No pressure, no perfect answers — just students inviting more students to open the Bible and talk about it, together.</p>
-    </div>
-  </div></div>
-
   <div class="resources-wrap"><div class="resources">
-    <h2>Get a head start</h2>
+    <h2>Get a head start with Scripture Bible reading</h2>
     <p>Before we meet, check out these short overview videos from <a href="https://bibleproject.com/videos/" target="_blank" rel="noopener noreferrer" style="color: var(--accent); font-weight: 600;">BibleProject</a> — a great way to get oriented if you're new to the text.</p>
 
     <div class="video-grid">
@@ -390,6 +486,55 @@
         <div class="name">Read Scripture Plan</div>
         <div class="desc">BibleProject's book-by-book reading plan that pairs with the videos above.</div>
       </a>
+    </div>
+  </div></div>
+
+  <div class="sprint-wrap"><div class="sprint">
+    <h2>Other books we're discussing</h2>
+    <p class="sprint-vibe">Alongside Scripture, we're pulling from a few other books that wrestle with the same big questions — connection, purpose, and meaning.</p>
+
+    <div class="week-list-wrap"><div class="week-list">
+      <a class="week-card" href="https://www.amazon.com/s?k=The+Anxious+Generation+Jonathan+Haidt" target="_blank" rel="noopener noreferrer">
+        <img class="cover" src="https://covers.openlibrary.org/b/id/15104803-L.jpg" alt="The Anxious Generation cover">
+        <div class="book-title">The Anxious Generation</div>
+        <div class="book-author">Jonathan Haidt</div>
+        <div class="book-link">View on Amazon →</div>
+      </a>
+      <a class="week-card" href="https://www.amazon.com/s?k=The+Second+Mountain+David+Brooks" target="_blank" rel="noopener noreferrer">
+        <img class="cover" src="https://covers.openlibrary.org/b/id/8782644-L.jpg" alt="The Second Mountain cover">
+        <div class="book-title">The Second Mountain</div>
+        <div class="book-author">David Brooks</div>
+        <div class="book-link">View on Amazon →</div>
+      </a>
+      <a class="week-card" href="https://www.amazon.com/dp/0593545427" target="_blank" rel="noopener noreferrer">
+        <img class="cover" src="https://i5.walmartimages.com/seo/The-Meaning-of-Your-Life-Finding-Purpose-in-an-Age-of-Emptiness-Hardcover-9780593545423_ff56a42f-fe06-4cc3-a4cf-5323e9f8914e.f1fd0917ec5625bd54c71981aff55ae9.jpeg?odnHeight=573&odnWidth=573&odnBg=FFFFFF" alt="The Meaning of Your Life cover">
+        <div class="book-title">The Meaning of Your Life: Finding Purpose in an Age of Emptiness</div>
+        <div class="book-author">Arthur C. Brooks</div>
+        <div class="book-link">View on Amazon →</div>
+      </a>
+      <a class="week-card" href="https://www.amazon.com/s?k=Demolishing+Doubt+Cliffe+Stuart+Knechtle" target="_blank" rel="noopener noreferrer">
+        <img class="cover" src="https://substackcdn.com/image/fetch/$s_!CXae!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7aed8453-c46b-4aa0-b5e3-bbf90f52e1fc_980x1500.jpeg" alt="Demolishing Doubt cover">
+        <div class="book-title">Demolishing Doubt: Discover How Your Deepest Questions Can Lead to Life-Giving Faith</div>
+        <div class="book-author">Cliffe &amp; Stuart Knechtle</div>
+        <div class="book-link">View on Amazon →</div>
+      </a>
+      <a class="week-card" href="https://www.amazon.com/s?k=What+Are+You+Going+to+Do+with+Your+Life+JD+Greear" target="_blank" rel="noopener noreferrer">
+        <img class="cover" src="https://covers.openlibrary.org/b/id/10837023-L.jpg" alt="What Are You Going to Do with Your Life? cover">
+        <div class="book-title">What Are You Going to Do with Your Life?</div>
+        <div class="book-author">J.D. Greear</div>
+        <div class="book-link">View on Amazon →</div>
+      </a>
+    </div></div>
+
+    <p class="sprint-meta">Ask us at a meeting if you'd like a free copy to follow along.</p>
+  </div></div>
+
+  <div class="about-wrap"><div class="about">
+    <img src="group_illustration.jpeg" alt="Illustration of a group gathered together">
+    <div class="about-text">
+      <h2>About us</h2>
+      <p>We're a group of UCSD students who found God during college — and it changed everything. What started as our own honest questions turned into a love for reading Scripture together.</p>
+      <p>Now we just want to share that with others. No pressure, no perfect answers — just students inviting more students to open the Bible and talk about it, together.</p>
     </div>
   </div></div>
 
